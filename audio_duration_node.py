@@ -29,11 +29,3 @@ class ComfyUI_GetAudioDuration(BaseNode):
         duration_seconds = len(audio_file) / 1000.0  # Convert milliseconds to seconds
         return (duration_seconds,)
 
-# Register the node
-NODE_CLASS_MAPPINGS = {
-    "ComfyUI_GetAudioDuration": ComfyUI_GetAudioDuration,
-}
-
-NODE_DISPLAY_NAME_MAPPINGS = {
-    "ComfyUI_GetAudioDuration": "ComfyUI-GetAudioDuration",
-}
