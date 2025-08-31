@@ -1,11 +1,7 @@
-from pydub import AudioSegment
-from .base_node import BaseNode
+from ._types import AUDIO
 
-class ComfyUI_GetAudioDuration(BaseNode):
-    """
-    A ComfyUI node to calculate the duration of an audio file.
-    """
 
+class ComfyUI_GetAudioDuration:
     @classmethod
     def INPUT_TYPES(cls):
         return {
@@ -29,3 +25,14 @@ class ComfyUI_GetAudioDuration(BaseNode):
         duration_seconds = len(audio_file) / 1000.0  # Convert milliseconds to seconds
         return (duration_seconds,)
 
+
+# A dictionary that contains all nodes you want to export with their names
+# NOTE: names should be globally unique
+NODE_CLASS_MAPPINGS = {
+    "ComfyUI_GetAudioDuration": ComfyUI_GetAudioDuration
+}
+
+# A dictionary that contains the friendly/humanly readable titles for the nodes
+NODE_DISPLAY_NAME_MAPPINGS = {
+    "ComfyUI_GetAudioDuration": "ComfyUI-GetAudioDuration"
+}
